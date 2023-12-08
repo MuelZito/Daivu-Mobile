@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/branco">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/containterImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/branco"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgPerfume"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/malbec_img" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textPerfume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Malbec Gold"
+        android:textColor="@color/preto"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/containterImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descricaoPerfume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="10dp"
+        android:text="Fragrância ideal para homens com intensidade e que buscam atrair sempre mais atenção."
+        android:textColor="@color/preto"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/containterImg"
+        app:layout_constraintTop_toBottomOf="@id/textPerfume" />
+
+    <TextView
+        android:id="@+id/textPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="R$ 180.90"
+        android:textColor="@color/preto"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/containterImg"
+        app:layout_constraintTop_toBottomOf="@id/descricaoPerfume" />
+
+    <Button
+        android:id="@+id/btAddCart"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="add cart"
+        android:textColor="@color/branco"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/descricaoPerfume"
+        app:layout_constraintStart_toEndOf="@id/textPreco"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
