@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.daivustore.R;
+import com.example.daivustore.classe.Usuario;
 
 public class TelaLogin extends AppCompatActivity {
 
@@ -34,10 +35,13 @@ public class TelaLogin extends AppCompatActivity {
                 if (emailGravado.equals(etEmail.getText().toString()) && senhaGravada.equals(etPassword.getText().toString())) {
                     Toast.makeText(TelaLogin.this, "Acesso Liberado", Toast.LENGTH_SHORT).show();
 
+                    // Criar um objeto Usuario com os dados
+                    Usuario usuario = new Usuario("", emailGravado, senhaGravada);
 
+                    // Abrir TelaPrincipal passando os dados do usuário como extra
                     Intent intent = new Intent(TelaLogin.this, TelaPrincipal.class);
+                    intent.putExtra("usuario", usuario);
                     startActivity(intent);
-                    Toast.makeText(TelaLogin.this, "Acesso Liberado", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(TelaLogin.this, "Email ou Senha Incorreto!", Toast.LENGTH_SHORT).show();
                 }

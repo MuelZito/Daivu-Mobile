@@ -1,6 +1,8 @@
 package com.example.daivustore.classe;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
         private String nome;
         private String email;
         private String senha;

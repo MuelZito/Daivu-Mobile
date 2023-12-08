@@ -7,23 +7,90 @@
     android:background="@drawable/background"
     tools:context=".ui.telas.TelaCadastro">
 
-    <TextView
-        android:id="@+id/google"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="309dp"
+        android:layout_height="40dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/borda"
-        android:drawableStart="@drawable/google_icon"
-        android:elevation="12dp"
+        android:layout_marginEnd="66dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:inputType="textPassword"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/facebook"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="309dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997" />
+
+    <TextView
+        android:id="@+id/textPassaword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+
+        android:text="Senha"
+        android:textColor="@color/azul"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEmail"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/etFullName"
+        android:layout_width="309dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="66dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="309dp"
+        android:layout_marginBottom="8dp"
+
+        android:text="Nome"
+        android:textColor="@color/azul"
+        app:layout_constraintBottom_toTopOf="@+id/etFullName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLogin"
+        app:layout_constraintVertical_bias="0.827" />
 
     <TextView
         android:id="@+id/apple"
@@ -36,7 +103,7 @@
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword"
         app:layout_constraintVertical_bias="0.0" />
@@ -45,6 +112,7 @@
         android:id="@+id/facebook"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/borda"
@@ -53,61 +121,26 @@
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/apple"
-        app:layout_constraintHorizontal_bias="0.98"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/google"
         app:layout_constraintTop_toBottomOf="@+id/etPassword"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="309dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/etFullName"
-        android:layout_width="309dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="336dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/etEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="309dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="66dp"
-        android:layout_marginBottom="228dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:inputType="textPassword"
+    <TextView
+        android:id="@+id/google"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/borda"
+        android:drawableStart="@drawable/google_icon"
+        android:elevation="12dp"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textEmail"
@@ -116,7 +149,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginEnd="351dp"
 
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="8dp"
         android:text="Email"
         android:textColor="@color/azul"
         app:layout_constraintBottom_toTopOf="@+id/etEmail"
@@ -125,36 +158,21 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textPassaword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-
-        android:text="Senha"
-        android:textColor="@color/azul"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
         android:id="@+id/textLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginEnd="284dp"
 
+        android:layout_marginEnd="284dp"
         android:text="Register"
         android:textColor="@color/azul"
         android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.363" />
 
     <Button
         android:id="@+id/btRegister"
@@ -189,23 +207,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.99" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="309dp"
-        android:layout_marginBottom="8dp"
-
-        android:text="Nome"
-        android:textColor="@color/azul"
-        app:layout_constraintBottom_toTopOf="@+id/etFullName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLogin"
-        app:layout_constraintVertical_bias="0.111" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
