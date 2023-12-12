@@ -1,29 +1,41 @@
 package com.example.daivustore.adapter;
 
+
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.daivustore.classe.Perfume;
 import com.example.daivustore.databinding.PerfumeItemBinding;
+import com.example.daivustore.ui.telas.DetalhesProduto;
+
 
 import java.util.ArrayList;
 
-public class PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.PerfumeViewHolder> {
+public class    PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.PerfumeViewHolder> {
 
     private final ArrayList<Perfume> perfumeList;
     private final Context context;
+    private OnItemClickListener onItemClickListener; // Adicionado
 
     public PerfumeAdapter(ArrayList<Perfume> perfumeList, Context context) {
         this.perfumeList = perfumeList;
         this.context = context;
     }
 
+    // Adicionado
+    public interface OnItemClickListener {
+        void onItemClick(int position, View view);
+    }
+
+    // Adicionado
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
 
     @NonNull
     @Override
@@ -40,15 +52,29 @@ public class PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.PerfumeV
         holder.binding.textPerfume.setText(perfumeList.get(position).getNome());
         holder.binding.descricaoPerfume.setText(perfumeList.get(position).getDescricao());
         holder.binding.textPreco.setText(perfumeList.get(position).getPreco());
-        holder.binding.btAddCart.setOnClickListener(new View.OnClickListener() {
+
+        // Adicionado
+        holder.itemView.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(position, v);
+            }
+        });
+        holder.binding.btComprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(context, "Adicionado ao carrinho", Toast.LENGTH_SHORT).show();
+                int clickedPosition = holder.getAdapterPosition(); // Obter a posição clicada
+
+                Perfume perfume = perfumeList.get(clickedPosition); // Corrigir aqui
+
+                Intent intent = new Intent(context, DetalhesProduto.class);
+                intent.putExtra("imagem_perfume", perfumeList.get(clickedPosition).getImgPerfume());
+                intent.putExtra("nome_perfume", perfume.getNome());
+
+                context.startActivity(intent);
             }
         });
     }
-
 
     @Override
     public int getItemCount() {
@@ -63,5 +89,4 @@ public class PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.PerfumeV
             this.binding = binding;
         }
     }
-
 }

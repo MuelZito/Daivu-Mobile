@@ -15,11 +15,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.daivustore.ui.dashboard.DashboardFragment"
         android:label="@string/title_carrinho"
-        tools:layout="@layout/fragment_carrinho" />
+        tools:layout="@layout/fragment_perfil" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.daivustore.ui.notifications.NotificationsFragment"
         android:label="@string/title_perfil"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_carrinho" />
 </navigation>

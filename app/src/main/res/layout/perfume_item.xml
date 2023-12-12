@@ -47,7 +47,7 @@
         android:layout_marginEnd="10dp"
         android:text="Fragrância ideal para homens com intensidade e que buscam atrair sempre mais atenção."
         android:textColor="@color/preto"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/containterImg"
@@ -58,6 +58,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:text="R$ 180.90"
         android:textColor="@color/preto"
         android:textSize="18sp"
@@ -66,10 +68,10 @@
         app:layout_constraintTop_toBottomOf="@id/descricaoPerfume" />
 
     <Button
-        android:id="@+id/btAddCart"
+        android:id="@+id/btComprar"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="add cart"
+        android:text="Comprar"
         android:textColor="@color/branco"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/descricaoPerfume"

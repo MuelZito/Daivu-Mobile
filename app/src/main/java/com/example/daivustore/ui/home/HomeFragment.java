@@ -37,6 +37,8 @@ public class HomeFragment extends Fragment {
         perfumeAdaptador = new PerfumeAdapter(perfumesList, getContext());
         recyclerViewPerfume.setAdapter(perfumeAdaptador);
 
+
+
         View root = binding.getRoot();
         return root;
     }

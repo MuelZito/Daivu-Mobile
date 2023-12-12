@@ -17,12 +17,12 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.daivustore.databinding.FragmentNotificationsBinding;
+import com.example.daivustore.databinding.FragmentPerfilBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NotificationsFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentPerfilBinding binding;
     private ImageView imageView;
     private FloatingActionButton button;
 
@@ -31,7 +31,7 @@ public class NotificationsFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentPerfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         imageView = binding.perfilFoto;
         button = binding.buttonCamera;
