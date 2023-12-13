@@ -194,12 +194,10 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/jaTemConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/ja_tem_conta"
-
         android:textColor="@color/branco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btRegister"

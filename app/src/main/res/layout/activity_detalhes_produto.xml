@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:textColor="@color/preto"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:text="O Malbec Gold Desodorante Colônia traz uma fragrância cheia de surpresas com ingredientes tão valiosos quanto o ouro.
 
 Para atrair ainda mais olhares, Malbec Gold apresenta a exclusiva tecnologia GoldSense, trazendo uma fragrância intensa e marcante para aumentar o seu poder de atração.
@@ -164,7 +164,7 @@ Para atrair ainda mais olhares, Malbec Gold apresenta a exclusiva tecnologia Gol
 Sua pirâmide olfativa é uma combinação de notas especiadas e cítricas com frescor e masculinidade. A flor de laranjeira no coração é envolvida por madeiras robustas que, junto com o acorde exclusivo, trazem uma aura de sensualidade e poder. " />
 
             <Button
-                android:id="@+id/btComprar"
+                android:id="@+id/btDetalhes"
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

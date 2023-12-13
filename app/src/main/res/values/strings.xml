@@ -4,5 +4,5 @@
     <string name="title_carrinho">Carrinho</string>
     <string name="title_perfil">Perfil</string>
     <string name="ja_tem_conta">Já tem uma conta?<b>Login</b></string>
-    <string name="novo_aqui">Novo aqui?<b>Register</b></string>
+    <string name="novo_aqui">Novo aqui?<b>Registrar-se</b></string>
 </resources>

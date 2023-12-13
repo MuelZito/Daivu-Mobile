@@ -1,7 +1,9 @@
 package com.example.daivustore.ui.notifications;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
@@ -27,6 +30,7 @@ public class NotificationsFragment extends Fragment {
     private FloatingActionButton button;
 
     // Identificador para solicitação de permissão
+    private TextView txtnome,txtEmail;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 101;
 
     @Override
@@ -35,13 +39,27 @@ public class NotificationsFragment extends Fragment {
         View root = binding.getRoot();
         imageView = binding.perfilFoto;
         button = binding.buttonCamera;
+        txtnome = binding.txtNomePerfil;
+        txtEmail = binding.txtEmailPerfil;
 
-        // Solicitar permissão da câmera se ainda não estiver concedida
+        // Obtém o nome das preferências compartilhadas
+        SharedPreferences prefs = requireContext().getSharedPreferences("dados", Context.MODE_PRIVATE);
+        String nomeUsuario = prefs.getString("nome", "");
+        String emailUsuario = prefs.getString("email", "");
+
+// Verifica se o nome não está vazio antes de definir o texto no TextView
+        if (!nomeUsuario.isEmpty()) {
+            txtnome.setText(nomeUsuario);
+        }
+        if (!emailUsuario.isEmpty()) {
+            txtEmail.setText(emailUsuario);
+        }
+
+
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
         }
 
-        // Configurar o clique do botão
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.daivustore.R;
@@ -23,8 +24,16 @@ public class TelaCadastro extends AppCompatActivity {
         EditText etEmail = findViewById(R.id.etEmail);
         EditText etPassword = findViewById(R.id.etPassword);
         Button btRegister = findViewById(R.id.btRegister);
+        TextView txtConta = findViewById(R.id.jaTemConta); // ID do TextView
 
         getSupportActionBar().hide();
+        txtConta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaCadastro.this, TelaLogin.class);
+                startActivity(intent);
+            }
+        });
 
         btRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,13 +55,21 @@ public class TelaCadastro extends AppCompatActivity {
                         Toast.makeText(TelaCadastro.this, "Cadastrado com sucesso", Toast.LENGTH_SHORT).show();
                         Usuario usuario = new Usuario(nome, email, senha);
 
-                        Intent intent = new Intent(TelaCadastro.this, TelaLogin.class);
-                        startActivity(intent);
-                        finish();
+                        // Iniciar tanto a TelaPrincipal quanto a TelaLogin
+                        Intent intentPrincipal = new Intent(TelaCadastro.this, TelaPrincipal.class);
+                        intentPrincipal.putExtra("usuario", usuario);
+                        startActivity(intentPrincipal);
 
+                        Intent intentLogin = new Intent(TelaCadastro.this, TelaLogin.class);
+                        intentLogin.putExtra("usuario", usuario);
+                        startActivity(intentLogin);
+
+                        finish();
                     } else {
                         Toast.makeText(TelaCadastro.this, "Não foi possível cadastrar", Toast.LENGTH_SHORT).show();
                     }
+
+
                 }
             }
         });

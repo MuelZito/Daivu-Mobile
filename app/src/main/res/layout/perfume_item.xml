@@ -68,12 +68,14 @@
         app:layout_constraintTop_toBottomOf="@id/descricaoPerfume" />
 
     <Button
-        android:id="@+id/btComprar"
+        android:id="@+id/btDetalhes"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Comprar"
+        android:text="Detalhes"
+        style="@android:style/Widget.Button"
         android:textColor="@color/branco"
-        android:textSize="12sp"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/descricaoPerfume"
         app:layout_constraintStart_toEndOf="@id/textPreco"
         app:layout_constraintEnd_toEndOf="parent"

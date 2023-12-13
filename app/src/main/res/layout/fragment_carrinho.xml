@@ -62,7 +62,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btComprar"
+                android:id="@+id/btDetalhes"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Comprar"

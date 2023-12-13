@@ -18,16 +18,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonCamera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/azul"
+
+                    android:clickable="true"
+                    android:src="@drawable/baseline_photo_camera_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/perfilFoto"
+                    app:layout_constraintEnd_toEndOf="@+id/perfilFoto" />
+
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="420dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="200dp"
                     android:scaleType="fitXY"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     app:srcCompat="@drawable/top_background" />
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -46,25 +55,37 @@
                     app:strokeColor="@color/preto"
                     app:strokeWidth="2dp" />
 
+                <TextView
+                    android:id="@+id/txtNomePerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Samuca"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="@+id/perfilFoto"
+                    app:layout_constraintStart_toStartOf="@+id/perfilFoto"
+                    app:layout_constraintTop_toBottomOf="@+id/perfilFoto" />
+
+                <TextView
+                    android:id="@+id/txtEmailPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="teste@gmail.com"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtNomePerfil"
+                    app:layout_constraintStart_toStartOf="@+id/txtNomePerfil"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNomePerfil" />
+
                 <LinearLayout
-                    android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/buttonCamera"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/azul"
-                    android:clickable="true"
-                    android:src="@drawable/baseline_photo_camera_24"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/perfilFoto" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEmailPerfil"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

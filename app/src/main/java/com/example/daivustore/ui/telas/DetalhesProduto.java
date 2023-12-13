@@ -33,9 +33,13 @@ public class DetalhesProduto extends AppCompatActivity {
         if (intent != null && intent.hasExtra("imagem_perfume")) {
             int imagemPerfume = intent.getIntExtra("imagem_perfume", 0);
             String nomePerfume = intent.getStringExtra("nome_perfume");
+            String precoPerfume = intent.getStringExtra("preco_perfume");
+            String descricaoPerfume = intent.getStringExtra("descricao_perfume");
 
             picPerfume.setImageResource(imagemPerfume);
             txtNome.setText(nomePerfume);
+            txtPreco.setText(precoPerfume);
+            txtDescricao.setText(descricaoPerfume);
         }
     }
 
@@ -43,6 +47,8 @@ public class DetalhesProduto extends AppCompatActivity {
         picPerfume = findViewById(R.id.picPerfume);
         iconVoltar = findViewById(R.id.iconVoltar);
         txtNome = findViewById(R.id.nomePerfume);
+        txtPreco = findViewById(R.id.precoPerfume);
+        txtDescricao = findViewById(R.id.descricaoPerfume);
 
         iconVoltar.setOnClickListener(new View.OnClickListener() {
             @Override

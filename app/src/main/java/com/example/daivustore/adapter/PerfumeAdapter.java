@@ -15,12 +15,18 @@ import com.example.daivustore.ui.telas.DetalhesProduto;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class    PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.PerfumeViewHolder> {
+public class PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.PerfumeViewHolder> {
 
-    private final ArrayList<Perfume> perfumeList;
+    private ArrayList<Perfume> perfumeList;
     private final Context context;
-    private OnItemClickListener onItemClickListener; // Adicionado
+    private OnItemClickListener onItemClickListener;
+    public void setFilteredList(ArrayList<Perfume> filteredList){
+        this.perfumeList = filteredList;
+        notifyDataSetChanged();
+    }
+
 
     public PerfumeAdapter(ArrayList<Perfume> perfumeList, Context context) {
         this.perfumeList = perfumeList;
@@ -59,7 +65,7 @@ public class    PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.Perfu
                 onItemClickListener.onItemClick(position, v);
             }
         });
-        holder.binding.btComprar.setOnClickListener(new View.OnClickListener() {
+        holder.binding.btDetalhes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -70,6 +76,8 @@ public class    PerfumeAdapter extends RecyclerView.Adapter<PerfumeAdapter.Perfu
                 Intent intent = new Intent(context, DetalhesProduto.class);
                 intent.putExtra("imagem_perfume", perfumeList.get(clickedPosition).getImgPerfume());
                 intent.putExtra("nome_perfume", perfume.getNome());
+                intent.putExtra("preco_perfume",perfume.getPreco());
+                intent.putExtra("descricao_perfume",perfume.getDescricao());
 
                 context.startActivity(intent);
             }
